@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculateVolume() {
+            let radius = document.getElementById("radius").value;
+            let height = document.getElementById("height").value;
+            radius = parseFloat(radius);
+            height = parseFloat(height);
+            const volume = Math.PI * radius * radius * height;
+            document.getElementById("result").innerText =
+                "원기둥의 부피는 " + volume.toFixed(2) + " 입니다.";
+        }
+    </script>
+</head>
+<body>
+    <label for="radius">반지름: </label>
+    <input type="text" id="radius"><br><br>
+    <label for="height">높이: </label>
+    <input type="text" id="height"><br><br>
+    <button onclick="calculateVolume()">계산</button>
+    <p id="result"></p>
+</body>
+</html>

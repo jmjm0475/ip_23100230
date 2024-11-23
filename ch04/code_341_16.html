@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function convertCmToFeetAndInches() {
+            let cm = document.getElementById("cmInput").value;
+            cm = parseFloat(cm);
+            if (isNaN(cm) || cm <= 0) {
+                return; 
+            }
+            const totalInches = cm / 2.54;
+            const feet = Math.floor(totalInches / 12);
+            const inches = (totalInches % 12).toFixed(2);
+            document.getElementById("result").innerText = 
+                cm + " cm는 약 " + feet + " 피트 " + inches + " 인치입니다.";
+        }
+    </script>
+</head>
+<body>
+    <label for="cmInput">센티미터를 입력하세요: </label>
+    <input type="text" id="cmInput">
+    <button onclick="convertCmToFeetAndInches()">변환</button>
+    <p id="result"></p>
+</body>
+</html>
